@@ -1,0 +1,29 @@
+<app-navbar></app-navbar>
+
+
+<div class="container d-flex flex-wrap mt-5 justify-content-between">
+    <div>
+       <h1 class="text-dark">Trending Movies</h1>
+       <h6 class="text-dark">Trending movies that available in netflix at 4k Ultra HD @Rs.200/month</h6>
+    </div>
+  
+  </div>
+
+<ul class="d-flex container trending-scroll" >
+    <div class="d-flex flex-wrap justify-content-between wrapper">
+      <li *ngFor="let r of results" class="movie-list mt-4">
+        <div class="" >
+          <img
+            src="{{ image_url }}{{ r.poster_path }}"
+            alt=""
+            height="300"
+            width="200"
+            (click)="getMovieId(r.id)"
+          />
+          <h6 class="text-center mt-2 text-dark">{{ r.name }}</h6>
+        </div>
+      </li>  
+    </div>
+  </ul>
+   
+    

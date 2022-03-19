@@ -1,0 +1,46 @@
+.movie-home{
+    background-size: cover
+}
+
+.play-button{
+    background-color: #D81921 !important;
+}
+
+.round{
+    height: 250px;
+    width: 250px;
+    border: 1px solid rgb(187, 187, 187);
+}
+
+
+.text-highlight{
+color: #F40612;
+}
+
+
+.movie-list{
+    list-style-type: none;
+}
+
+
+.trending-scroll{
+    overflow-y: hidden !important;
+    overflow: scroll;
+}
+
+::-webkit-scrollbar { width: 1px;
+    height: 7px;
+    width: 30px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: #DBDBDB; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #DBDBDB; 
+}

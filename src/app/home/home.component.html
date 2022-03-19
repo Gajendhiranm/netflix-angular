@@ -1,0 +1,270 @@
+<app-navbar></app-navbar>
+
+
+
+
+
+<app-carousel></app-carousel>
+
+
+
+
+
+
+
+<div class="d-flex justify-content-between m-2 p-2">
+  <div class="container">
+    <h2 class="ml-1 p-3 mt-3 text-dark container text-highlight">Popular on Netflix</h2>
+    <p class="ml-3">Popular evergreen trending series available at only Rs.100/month</p>
+  </div>
+
+  
+</div>
+
+
+
+
+
+  <ngx-skeleton-loader
+count="1"
+animation="progress"
+*ngIf="loader"
+>
+</ngx-skeleton-loader> 
+<ul class="d-flex container trending-scroll">
+  <div class="d-flex justify-content-between wrapper">
+    <li *ngFor="let r of results" class="movie-list">
+     
+      <div class="m-2 p-2">
+        <img
+          src="{{ image_url }}{{ r.poster_path }}"
+          alt=""
+          height="300"
+          width="200"
+          (click)="getId(r.id)"
+        />
+        <h6 class="text-center mt-2 text-dark">{{ r.name }}</h6>
+      </div>
+    </li>
+  </div>
+</ul>
+
+<!--Action Movies-->
+
+<div class="container d-flex flex-wrap mt-5 justify-content-between">
+  <div>
+    <h2 class="text-dark text-highlight">Trending in the last week</h2>
+    <h6 class="text-dark">Action movies that available in netflix</h6>
+  </div>
+  <div class="icons">
+    <img
+      src="../../assets/arrow.png"
+      height="55"
+      width="55"
+      class="sliderArrow left mr-2"
+      (click)="handleclick('left')"
+    />
+
+    <img
+      src="../../assets/arrow.png"
+      height="55"
+      width="55"
+      class="sliderArrow right "
+      (click)="handleclick('right')"
+    />
+  </div>
+</div>
+
+<ul class="d-flex container trending-scroll">
+  <div class="d-flex justify-content-between wrapper">
+    <li *ngFor="let r of actionResults" class="movie-list">
+      <div class="m-2 p-2">
+        <img
+          src="{{ image_url }}{{ r.poster_path }}"
+          alt=""
+          height="300"
+          width="200"
+          (click)="getMovieId(r.id)"
+        />
+        <h6 class="text-center mt-2 text-dark">{{ r.original_title }}</h6>
+      </div>
+    </li>
+  </div>
+</ul>
+
+
+
+
+<!--Action Movies-->
+
+<div class="container d-flex flex-wrap mt-5 justify-content-between">
+  <div>
+    <h1 class="text-dark"> Horror Movies</h1>
+    <h6 class="text-dark">Horror movies that available in netflix</h6>
+  </div>
+  <div class="icons">
+    <img
+      src="../../assets/arrow.png"
+      height="55"
+      width="55"
+      class="sliderArrow left mr-2"
+      (click)="handleclick('left')"
+    />
+
+    <img
+      src="../../assets/arrow.png"
+      height="55"
+      width="55"
+      class="sliderArrow right"
+      (click)="handleclick('right')"
+    />
+  </div>
+</div>
+
+<ul class="d-flex container trending-scroll ">
+  <div class="d-flex justify-content-between wrapper">
+    <li *ngFor="let r of  horrorResults" class="movie-list">
+      <div class="m-2 p-2">
+        <img
+          src="{{ image_url }}{{ r.poster_path }}"
+          alt=""
+          height="300"
+          width="200"
+          (click)="getMovieId(r.id)"
+        />
+        <h6 class="text-center mt-2 text-dark">{{ r.original_title}}</h6>
+      </div>
+    </li>
+  </div>
+</ul>
+
+
+<!--Action Movies-->
+
+<div class="container d-flex flex-wrap mt-5 justify-content-between">
+  <div>
+    <h1 class="text-dark">Comedy Movies</h1>
+    <h6 class="text-dark">Comedy movies that available in netflix</h6>
+  </div>
+  <div class="icons">
+    <img
+      src="../../assets/arrow.png"
+      height="55"
+      width="55"
+      class="sliderArrow left mr-2"
+      (click)="handleclick('left')"
+    />
+
+    <img
+      src="../../assets/arrow.png"
+      height="55"
+      width="55"
+      class="sliderArrow right"
+      (click)="handleclick('right')"
+    />
+  </div>
+</div>
+
+<ul class="d-flex container trending-scroll">
+  <div class="d-flex justify-content-between wrapper">
+    <li *ngFor="let r of  comedyResults" class="movie-list">
+      <div class="m-2 p-2">
+        <img
+          src="{{ image_url }}{{ r.poster_path }}"
+          alt=""
+          height="300"
+          width="200"
+          (click)="getMovieId(r.id)"
+        />
+        <h6 class="text-center mt-2 text-dark">{{ r.original_title }}</h6>
+      </div>
+    </li>
+  </div>
+</ul>
+
+
+
+<!--Romantic movies-->
+<div class="container d-flex flex-wrap mt-5 justify-content-between">
+  <div>
+    <h1 class="text-dark">Romantic Movies</h1>
+    <h6 class="text-dark">Action movies that available in netflix</h6>
+  </div>
+  <div class="icons">
+    <img
+      src="../../assets/arrow.png"
+      height="55"
+      width="55"
+      class="sliderArrow left mr-2"
+      (click)="handleclick('left')"
+    />
+
+    <img
+      src="../../assets/arrow.png"
+      height="55"
+      width="55"
+      class="sliderArrow right"
+      (click)="handleclick('right')"
+    />
+  </div>
+</div>
+
+<ul class="d-flex container trending-scroll">
+  <div class="d-flex justify-content-between wrapper">
+    <li *ngFor="let r of  romanticResults" class="movie-list">
+      <div class="m-2 p-2">
+        <img
+          src="{{ image_url }}{{ r.poster_path }}"
+          alt=""
+          height="300"
+          width="200"
+          (click)="getMovieId(r.id)"
+        />
+        <h6 class="text-center mt-2 text-dark">{{ r.original_title }}</h6>
+      </div>
+    </li>
+  </div>
+</ul>
+
+
+<!--documetaries-->
+<div class="container d-flex flex-wrap mt-5 justify-content-between">
+  <div>
+    <h1 class="text-dark">Documentaries</h1>
+    <h6 class="text-dark">Action movies that available in netflix</h6>
+  </div>
+  <div class="icons">
+    <img
+      src="../../assets/arrow.png"
+      height="55"
+      width="55"
+      class="sliderArrow left mr-2"
+      (click)="handleclick('left')"
+    />
+
+    <img
+      src="../../assets/arrow.png"
+      height="55"
+      width="55"
+      class="sliderArrow right"
+      (click)="handleclick('right')"
+    />
+  </div>
+</div>
+
+<ul class="d-flex container trending-scroll">
+  <div class="d-flex justify-content-between wrapper">
+    <li *ngFor="let r of documentaries" class="movie-list">
+      <div class="m-2 p-2">
+        <img
+          src="{{ image_url }}{{ r.poster_path }}"
+          alt=""
+          height="300"
+          width="200"
+          (click)="getMovieId(r.id)"
+        />
+        <h6 class="text-center mt-2 text-dark">{{ r.original_title }}</h6>
+      </div>
+    </li>
+  </div>
+</ul>

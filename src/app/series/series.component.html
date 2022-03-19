@@ -1,0 +1,71 @@
+<app-navbar></app-navbar>
+
+
+<div id="carouselExampleIndicators" class="carousel slide container mt-5" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="https://www.ubuy.co.in/productimg/?image=aHR0cHM6Ly9tLm1lZGlhLWFtYXpvbi5jb20vaW1hZ2VzL0kvODF4WUtHNTBWYkwuX0FDX1NMMTUwMF8uanBn.jpg" alt="First slide">
+      <div class="carousel-caption d-none d-md-block">
+          <h3>The Outer Banks</h3>
+          <p>A teenager enlists his three best friends to hunt for a legendary treasure linked to his father's disappearance</p>
+        </div>
+    </div>
+    
+    
+  </div>
+  <a class="carousel-control-prev" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next"  role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+
+<div class="container d-flex flex-wrap mt-5 justify-content-between">
+    <div>
+      <h1 class="text-dark"> Evergreen Series</h1>
+      <h6 class="text-dark">Horror movies that available in netflix</h6>
+    </div>
+    <div class="icons">
+      <img
+        src="../../assets/arrow.png"
+        height="55"
+        width="55"
+        class="sliderArrow left mr-2"
+        (click)="handleclick('left')"
+      />
+  
+      <img
+        src="../../assets/arrow.png"
+        height="55"
+        width="55"
+        class="sliderArrow right"
+        (click)="handleclick('right')"
+      />
+    </div>
+
+<ul class="d-flex container trending-scroll">
+  <div class="d-flex flex-wrap justify-content-between wrapper">
+    <li *ngFor="let r of seriesResults" class="movie-list">
+    
+      <div class="m-1 p-1">
+        <img
+          src="{{   basicUrl }}{{ r.poster_path }}"
+          alt=""
+          height="300"
+          width="200"
+           (click)="getId(r.id)"
+        />
+        <h6 class="text-center mt-2 text-dark">{{ r.name }}</h6>
+      </div>
+    </li>
+  </div>
+</ul>

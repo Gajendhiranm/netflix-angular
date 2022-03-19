@@ -1,0 +1,206 @@
+<app-navbar></app-navbar>
+
+
+<div id="carouselExampleIndicators" class="carousel slide container mt-5" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="https://www.koimoi.com/wp-content/new-galleries/2021/10/red-notice-actors-dwayne-johnson-gal-gadot-ryan-reynolds-expected-salary-for-their-work-will-blow-your-mind-001.jpg" alt="First slide">
+      <div class="carousel-caption d-none d-md-block">
+          <h3>Red Notics</h3>
+          <p>Action comedy teen movie based on stealing Eggs.</p>
+        </div>
+    </div>
+   
+  </div>
+  <a class="carousel-control-prev" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next"  role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+
+<!--Action Movies-->
+
+<div class="container d-flex flex-wrap mt-5 justify-content-between">
+    <div>
+      <h1 class="text-dark">Action Movies</h1>
+      <h6 class="text-dark">Action movies that available in netflix</h6>
+    </div>
+    <div class="icons">
+      <img
+        src="../../assets/arrow.png"
+        height="55"
+        width="55"
+        class="sliderArrow left mr-2"
+   
+      />
+  
+      <img
+        src="../../assets/arrow.png"
+        height="55"
+        width="55"
+        class="sliderArrow right"
+   
+      />
+    </div>
+  </div>
+  
+  <ul class="d-flex container trending-scroll">
+    <div class="d-flex justify-content-between wrapper">
+      <li *ngFor="let r of actionResults" class="movie-list">
+        <div class="m-2 p-2">
+          <img
+            src="{{ image_url }}{{ r.poster_path }}"
+            alt=""
+            height="300"
+            width="200"
+            (click)="getMovieId(r.id)"
+          />
+          <h6 class="text-center mt-2 text-dark">{{ r.original_title }}</h6>
+        </div>
+      </li>
+    </div>
+  </ul>
+  
+  
+  
+  
+  <!--Action Movies-->
+  
+  <div class="container d-flex flex-wrap mt-5 justify-content-between">
+    <div>
+      <h1 class="text-dark"> Horror Movies</h1>
+      <h6 class="text-dark">Horror movies that available in netflix</h6>
+    </div>
+    <div class="icons">
+      <img
+        src="../../assets/arrow.png"
+        height="55"
+        width="55"
+        class="sliderArrow left mr-2"
+   
+      />
+  
+      <img
+        src="../../assets/arrow.png"
+        height="55"
+        width="55"
+        class="sliderArrow right"
+   
+      />
+    </div>
+  </div>
+  
+  <ul class="d-flex container trending-scroll ">
+    <div class="d-flex justify-content-between wrapper">
+      <li *ngFor="let r of  horrorResults" class="movie-list">
+        <div class="m-2 p-2">
+          <img
+            src="{{ image_url }}{{ r.poster_path }}"
+            alt=""
+            height="300"
+            width="200"
+            (click)="getMovieId(r.id)"
+          />
+          <h6 class="text-center mt-2 text-dark">{{ r.original_title}}</h6>
+        </div>
+      </li>
+    </div>
+  </ul>
+  
+  
+  <!--Action Movies-->
+  
+  <div class="container d-flex flex-wrap mt-5 justify-content-between">
+    <div>
+      <h1 class="text-dark">Comedy Movies</h1>
+      <h6 class="text-dark">Comedy movies that available in netflix</h6>
+    </div>
+    <div class="icons">
+      <img
+        src="../../assets/arrow.png"
+        height="55"
+        width="55"
+        class="sliderArrow left mr-2"
+   
+      />
+  
+      <img
+        src="../../assets/arrow.png"
+        height="55"
+        width="55"
+        class="sliderArrow right"
+   
+      />
+    </div>
+  </div>
+  
+  <ul class="d-flex container trending-scroll">
+    <div class="d-flex justify-content-between wrapper">
+      <li *ngFor="let r of  comedyResults" class="movie-list">
+        <div class="m-2 p-2">
+          <img
+            src="{{ image_url }}{{ r.poster_path }}"
+            alt=""
+            height="300"
+            width="200"
+            (click)="getMovieId(r.id)"
+          />
+          <h6 class="text-center mt-2 text-dark">{{ r.original_title }}</h6>
+        </div>
+      </li>
+    </div>
+  </ul>
+  
+  
+  
+  <!--Romantic movies-->
+  <div class="container d-flex flex-wrap mt-5 justify-content-between">
+    <div>
+      <h1 class="text-dark">Romantic Movies</h1>
+      <h6 class="text-dark">Action movies that available in netflix</h6>
+    </div>
+    <div class="icons">
+      <img
+        src="../../assets/arrow.png"
+        height="55"
+        width="55"
+        class="sliderArrow left mr-2"
+   
+      />
+  
+      <img
+        src="../../assets/arrow.png"
+        height="55"
+        width="55"
+        class="sliderArrow right"
+        
+      />
+    </div>
+  </div>
+  
+  <ul class="d-flex container trending-scroll">
+    <div class="d-flex justify-content-between wrapper">
+      <li *ngFor="let r of  romanticResults" class="movie-list">
+        <div class="m-2 p-2">
+          <img
+            src="{{ image_url }}{{ r.poster_path }}"
+            alt=""
+            height="300"
+            width="200"
+            (click)="getMovieId(r.id)"
+          />
+          <h6 class="text-center mt-2 text-dark">{{ r.original_title }}</h6>
+        </div>
+      </li>
+    </div>
+  </ul>

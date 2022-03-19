@@ -1,0 +1,26 @@
+<div class="login">
+    <div class="top">
+      <div class="wrapper">
+        <img
+          class="logo"
+          src="../../assets/netflix-logo.png"
+          alt=""
+        />
+      </div>
+    </div>
+    <div class="container">
+      <form  #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm.value)">
+        <h5>Sign In</h5>
+        <input type="email" placeholder="Enter the Email" ngModel name="email"/>
+        <input type="password" placeholder="Enter the Password" class="mt-3" ngModel name="password"/>
+        <button class="loginButton mt-3 btn btn-danger" type="submit" >Sign In</button>
+        <span class="mt-2">
+          New to Netflix? <b>Sign up now.</b>
+        </span>
+        <small class="mt-2">
+          This page is protected by Google reCAPTCHA to ensure you're not a
+          bot. <b>Learn more</b>.
+        </small>
+      </form>
+    </div>
+  </div>

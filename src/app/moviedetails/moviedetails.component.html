@@ -1,0 +1,109 @@
+<app-navbar></app-navbar>
+
+<div
+  class="movie-home"
+  style="height: 600px;background-image: url('{{basicUrl}}{{this.results.backdrop_path}} ');"
+>
+  <div class="mbr-section-text position-absolute">
+    <div class="mt-5 p-5 m-5">
+      <h1 class="text-white">
+        {{ this.results?.original_name }}
+      </h1>
+
+      <p class="movie-description text-white" style="width: 400px">
+        {{ this.results?.overview }}
+      </p>
+      <div class="d-flex">
+        <span class="badge badge-warning ">{{
+          this.results.original_language
+        }}</span>
+      </div>
+      <p class="mt-3 text-white">
+        Directed by
+        <span class="font-weight-bolder text-white">{{
+          this.results?.created_by[0]?.name
+        }}</span>
+      </p>
+      <button class="btn play-button">
+        <img src="../../assets/play.png" height="30" width="30" /><span
+          class="ml-2 font-weight-bolder text-white"
+          >Play</span
+        >
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="mt-5">
+  <h1 class="text-center">Votings and Ratings</h1>
+  <div class="d-flex flex-wrap justify-content-center mt-5">
+    <div class="card mt-2" style="width: 250px !important">
+      <img
+        src="../../assets/vote.png"
+        alt=""
+        height="70"
+        width="70"
+        class="p-2 d-block m-auto"
+      />
+
+      <h4 class="text-center">{{ this.results.vote_average }}</h4>
+      <p class="text-center">Vote Average </p>
+    </div>
+    <div class="card ml-3 mt-2" style="width: 250px !important">
+      <img
+        src="../../assets/episodes.png"
+        alt=""
+        height="60"
+        width="60"
+        class="p-2 d-block m-auto"
+      />
+
+      <h4 class="text-center">{{ this.results.number_of_seasons }}</h4>
+      <p class="text-center">number_of_seasons</p>
+    </div>
+    <div class="card ml-3 mt-2" style="width: 250px !important">
+      <img
+        src="../../assets/popularity.png"
+        alt=""
+        height="60"
+        width="60"
+        class="p-2 d-block m-auto"
+      />
+
+      <h4 class="text-center">{{ this.results.popularity }}</h4>
+      <p class="text-center">popularity</p>
+    </div>
+    <div class="card ml-3 mt-2" style="width: 250px !important">
+      <img
+        src="../../assets/star.png"
+        alt=""
+        height="80"
+        width="80"
+        class="p-2 d-block m-auto"
+      />
+
+      <h4 class="text-center">{{ this.results.vote_count }}</h4>
+      <p class="text-center">Vote Count</p>
+    </div>
+  </div>
+</div>
+
+
+<h1 class="text-center mt-5">cast and crews</h1>
+
+<ul class="d-flex container trending-scroll">
+  <div class="d-flex mt-2 justify-content-between wrapper">
+    <li *ngFor="let r of credits" class="movie-list">
+      <div class="m-2 p-2 mt-3">
+        <img
+          src="{{  basicUrl }}{{ r.profile_path}}"
+          alt=""
+          height="300"
+          width="200"
+        
+        />
+        <h6 class="text-center mt-2 text-dark">{{ r.name }}</h6>
+      </div>
+    </li>
+  </div>
+</ul>
